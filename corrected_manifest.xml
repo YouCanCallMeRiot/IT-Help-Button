@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
+
+  <Id>c9ab49c7-4abb-4d5b-88c9-8aeefa8570aa</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>MCT Group</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Submit IT Ticket"/>
+  <Description DefaultValue="Quickly submit IT support tickets via email template."/>
+  <IconUrl DefaultValue="https://thumbs.dreamstime.com/b/r-214740381.jpg"/>
+  <SupportUrl DefaultValue="https://teams.microsoft.com/l/app/aa6b770e-6b8c-4096-9648-5239295ecadc?source=app-bar-share-entrypoint"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.3">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://yourdomain.com/taskpane.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  </Rule>
+
+  <VersionOverrides Version="1.0">
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+          <OfficeTab id="TabDefault">
+            <Group id="msgReadGroup">
+              <Label resid="groupLabel"/>
+              <Control xsi:type="Button" id="openTemplateButton">
+                <Label resid="buttonLabel"/>
+                <Supertip>
+                  <Title resid="buttonTitle"/>
+                  <Description resid="buttonDesc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="icon16"/>
+                  <bt:Image size="32" resid="icon32"/>
+                  <bt:Image size="80" resid="icon80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>openTemplate</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+          </OfficeTab>
+        </ExtensionPoint>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="https://us-api.asm.skype.com/v1/objects/0-wus-d10-2dd7e4bc6a7326775261ccc6400ba056/content/original/generated_image.png"/>
+        <bt:Image id="icon32" DefaultValue="https://us-api.asm.skype.com/v1/objects/0-wus-d3-53f484ed94bc22c930664c46123376e7/content/original/generated_image.png"/>
+        <bt:Image id="icon80" DefaultValue="https://us-api.asm.skype.com/v1/objects/0-wus-d9-b66c939a3d1af20e0e4821db8bc1f11f/content/original/generated_image.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="functionFileUrl" DefaultValue="\TMI-HUB\ITPublic\IT Support Buttonunctions.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="IT Support"/>
+        <bt:String id="buttonLabel" DefaultValue="Submit Ticket"/>
+        <bt:String id="buttonTitle" DefaultValue="Submit IT Ticket"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="buttonDesc" DefaultValue="Click to open a pre-filled IT support email template."/>
+      </bt:LongStrings>
+    </Resources>
+
+    <FunctionFile resid="functionFileUrl"/>
+  </VersionOverrides>
+</OfficeApp>
