@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://yourdomain.com/taskpane.html"/>
+        <SourceLocation DefaultValue="https://github.com/YouCanCallMeRiot/IT-Help-Button/blob/main/functions.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -74,7 +74,7 @@
         <bt:Image id="icon80" DefaultValue="https://us-api.asm.skype.com/v1/objects/0-wus-d9-b66c939a3d1af20e0e4821db8bc1f11f/content/original/generated_image.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFileUrl" DefaultValue="\TMI-HUB\ITPublic\IT Support Buttonunctions.html"/>
+        <bt:Url id="functionFileUrl" DefaultValue="https://github.com/YouCanCallMeRiot/IT-Help-Button/blob/main/functions.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="IT Support"/>
